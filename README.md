@@ -116,7 +116,7 @@ Decision Tree was selected as the final model because it provides:
 * No significant overfitting
 * Fastest prediction time (~0.001 sec)
 
-![ROC Curve](Results/roc_curve.png)
+![ROC Curve](Results/ROC.png)
 ![Confusion Matrix](Results/Confusion.png)
 
 ---
