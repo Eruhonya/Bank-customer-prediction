@@ -1,6 +1,6 @@
 # 🏦 Bank Customer Retirement Prediction
 
-## 📌 Project Overview
+## Project Overview
 
 This project aims to predict whether a bank customer will retire (leave the bank's services) based on demographic and financial information.
 
@@ -8,7 +8,7 @@ The project covers the complete machine learning workflow, including exploratory
 
 ---
 
-## 🎯 Objective
+## Objective
 
 Build a binary classification model capable of predicting whether a customer will:
 
@@ -17,7 +17,7 @@ Build a binary classification model capable of predicting whether a customer wil
 
 ---
 
-## 📊 Dataset
+## Dataset
 
 ### Features
 
@@ -38,10 +38,10 @@ Build a binary classification model capable of predicting whether a customer wil
 
 ---
 
-## 🔍 Exploratory Data Analysis
+## Exploratory Data Analysis
 
-Key findings:
-
+![1](Results/distribution.png)
+![2](Results/download.png)
 * Retirement probability increases significantly with age.
 * Customers aged 55+ are predominantly retired.
 * Customers with higher retirement savings are more likely to retire.
@@ -50,34 +50,7 @@ Key findings:
 
 ---
 
-## 🛠 Missing Value Analysis
-
-### Age
-
-Missing values were identified as **MCAR (Missing Completely At Random)**.
-
-Evaluated methods:
-
-* Mean Imputation
-* Median Imputation
-* Random Sample Imputation
-
-### 401K Savings
-
-Missing values were identified as **MAR (Missing At Random)** and were associated with customer age.
-
-Evaluated methods:
-
-* KNN Imputation
-* Iterative Imputation
-
-### Final Decision
-
-Mean Imputation was selected because more sophisticated methods did not produce meaningful performance improvements.
-
----
-
-## ⚙️ Feature Engineering
+## Feature Engineering
 
 A new feature was created:
 
@@ -95,7 +68,7 @@ This feature improved model performance by capturing retirement savings relative
 
 ---
 
-## 🤖 Models Evaluated
+## Models Evaluated
 
 * Logistic Regression
 * Decision Tree
@@ -105,7 +78,7 @@ This feature improved model performance by capturing retirement savings relative
 
 ---
 
-## 📈 Evaluation Metrics
+## Evaluation Metrics
 
 The following metrics were used:
 
@@ -117,7 +90,7 @@ The following metrics were used:
 
 ---
 
-## 🏆 Results
+## Results
 
 | Model               | Accuracy | F1 Score | ROC-AUC |
 | ------------------- | -------- | -------- | ------- |
@@ -127,9 +100,11 @@ The following metrics were used:
 | Logistic Regression | 94.0%    | 93.9%    | 98.6%   |
 | SVC                 | 94.0%    | 94.2%    | 98.7%   |
 
+![Model Comparison](Results/model_result.png)
+
 ---
 
-## ✅ Final Model
+## Final Model
 
 ### Decision Tree
 
@@ -141,9 +116,12 @@ Decision Tree was selected as the final model because it provides:
 * No significant overfitting
 * Fastest prediction time (~0.001 sec)
 
+![ROC Curve](Results/roc_curve.png)
+![Confusion Matrix](Results/Confusion.png)
+
 ---
 
-## 📌 Conclusion
+## Conclusion
 
 All evaluated models achieved strong predictive performance and demonstrated excellent generalization ability.
 
@@ -152,29 +130,3 @@ The engineered feature **SavingsPerAge** positively affected several models and 
 Despite the limited number of available predictors, the models achieved excellent results, with a maximum test accuracy of approximately **95.4%**.
 
 Among all evaluated algorithms, **Decision Tree** delivered the best balance of predictive performance, interpretability, and computational efficiency, making it the preferred model for this dataset.
-
----
-
-## 🧰 Technologies Used
-
-* Python
-* Pandas
-* NumPy
-* Scikit-Learn
-* Feature-Engine
-* Matplotlib
-* Seaborn
-
----
-
-## 📂 Project Structure
-
-```text
-├── data/
-├── notebooks/
-├── images/
-├── models/
-├── README.md
-└── requirements.txt
-```
-
